@@ -78,5 +78,19 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// a route to provide information for the About Us page
+app.get('/about', (req, res) => {
+  res.json({
+    title: 'About Us',
+    name: 'Sean Kim',
+    paragraphs: [
+      'Hi! My name is Sean Kim. I am a student at New York University studying Computer Science and Game Design.',
+      'I enjoy combining technical programming skills with creative design. I am especially interested in software development, game development, and building interactive experiences.',
+      'Outside of programming, I enjoy exploring New York City, working on personal projects, and learning about new technologies.',
+    ],
+    imageUrl: 'http://localhost:7002/sean.jpg',
+  })
+})
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
